@@ -33,7 +33,26 @@ img {
     object-fit: cover;
 }
 
-#hero:p {
+.cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: maroon;
+    background-color: transparent;
+    border: 1.5px solid maroon;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+
+.cta:hover {
+    color: whitesmoke;
+    background-color: maroon;
+}
+
+p {
     color: whitesmoke;
     font-size: 1.4rem;
     margin-top: 5px;
@@ -121,25 +140,6 @@ img {
     animation-delay: 2.5s;
 }
 
-
-#hero .cta {
-    display: inline-block;
-    padding: 10px 30px;
-    color: maroon;
-    background-color: transparent;
-    border: 1.5px solid maroon;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 1rem;
-    margin-top: 30px;
-    transition: .3s ease;
-    transition-property: background-color, color;
-}
-
-#hero .cta:hover {
-    color: whitesmoke;
-    background-color: maroon;
-}
 
 /* End Hero Section */
 
@@ -230,6 +230,9 @@ img {
 /* Projects End */
 
 /* About Me */
+#about p {
+    color:#485563;
+}
 #about .about {
     flex-direction: column-reverse;
     text-align: center;
@@ -238,13 +241,30 @@ img {
     padding: 100px 20px;
 }
 
-#about p {
-    font-size: 1.4rem;
-    margin-top: 5px;
-    line-height: 2.5rem;
-    font-weight: 300;
-    letter-spacing: .05rem;
+#about .col_left {
+    width: 250px;
+    height: 360px;
 }
+
+#about .col_right {
+    width: 100%;
+}
+
+#about .col_right h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    margin-bottom: 10px;
+}
+
+#about .col_right p {
+    margin-bottom: 20px;
+}
+
+#about .col_right .cta { 
+    margin-bottom: 50px;
+}
+
 
 /* About Me End */
 
