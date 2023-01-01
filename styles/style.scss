@@ -1,0 +1,263 @@
+$color_1: maroon;
+$color_2: whitesmoke;
+$color_3: black;
+$color_4: transparent;
+$color_5: white;
+$color_6: #485563;
+$font_family_1: 'Montserrat', sans-serif;
+$background_color_1: transparent;
+$background_color_2: maroon;
+$background_color_3: grey;
+$background_color_4: black;
+$background_color_5: whitesmoke;
+
+/* Colors :
+#485563
+maroon
+*/
+@import "https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@300;400;700&display=swap";
+
+@keyframes text_revel_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_revel {
+	100% {
+		color: whitesmoke;
+	}
+}
+@keyframes text_revel_name {
+	100% {
+		color: maroon;
+	}
+}
+/* End Keyframes */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 15px;
+	font-family: $font_family_1;
+}
+a {
+	text-decoration: none;
+}
+.container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+.cta {
+	display: inline-block;
+	padding: 10px 30px;
+	color: $color_1;
+	background-color: $background_color_1;
+	border: 1.5px solid maroon;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 1rem;
+	margin-top: 30px;
+	transition: .3s ease;
+	transition-property: background-color, color;
+	&:hover {
+		color: $color_2;
+		background-color: $background_color_2;
+	}
+}
+p {
+	color: $color_2;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: .05rem;
+}
+.section_title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: $color_3;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+	span {
+		color: $color_1;
+	}
+}
+#hero {
+	background-color: $background_color_3;
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background-color: $background_color_4;
+		opacity: .7;
+		z-index: -1;
+	}
+	h1 {
+		display: block;
+		width: fit-content;
+		font-size: 4rem;
+		position: relative;
+		color: $color_4;
+		animation: text_revel .5s ease forwards;
+		animation-delay: 1s;
+		&:nth-child(1) {
+			animation-delay: 1s;
+			span {
+				animation-delay: .5s;
+			}
+		}
+		&:nth-child(2) {
+			animation-delay: 2s;
+			span {
+				animation-delay: 1.5s;
+			}
+		}
+		&:nth-child(3) {
+			animation: text_revel_name .5s forwards;
+			animation-delay: 3s;
+			span {
+				animation-delay: 2.5s;
+			}
+		}
+		span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 0;
+			background-color: $background_color_2;
+			animation: text_revel_box 1s ease;
+			animation-delay: .5s;
+		}
+	}
+}
+#projects {
+	.projects {
+		flex-direction: column;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 100px 0;
+	}
+	.project_header {
+		h1 {
+			margin-bottom: 50px;
+		}
+	}
+	.all_projects {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.project_item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 80%;
+		margin: 20px auto;
+		overflow: hidden;
+		border-radius: 10px;
+		&:hover {
+			.project_img {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+	.project_info {
+		padding: 30px;
+		flex-basis: 50%;
+		background-color: $background_color_5;
+		height: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		flex-direction: column;
+		background-image: linear-gradient(60deg, #29332c 0%, #485563 100%);
+		color: $color_5;
+		h1 {
+			font-size: 4rem;
+			font-weight: 500;
+		}
+		h2 {
+			font-size: 1.8rem;
+			font-weight: 500;
+			margin-top: 10px;
+		}
+		p {
+			color: $color_2;
+		}
+	}
+	.project_img {
+		flex-basis: 50%;
+		height: 300px;
+		overflow: hidden;
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			background-image: linear-gradient(60deg, #29332c 0%, #485563 100%);
+			opacity: 50%;
+		}
+		img {
+			transition: .3s ease transform;
+		}
+	}
+}
+#about {
+	p {
+		color: $color_6;
+	}
+	.about {
+		flex-direction: column-reverse;
+		text-align: center;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 100px 20px;
+	}
+	.col_left {
+		width: 250px;
+		height: 360px;
+	}
+	.col_right {
+		width: 100%;
+		h2 {
+			font-size: 1.8rem;
+			font-weight: 500;
+			letter-spacing: .2rem;
+			margin-bottom: 10px;
+		}
+		p {
+			margin-bottom: 20px;
+		}
+		.cta {
+			margin-bottom: 50px;
+		}
+	}
+}

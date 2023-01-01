@@ -1,0 +1,283 @@
+/* Colors :
+#485563
+maroon
+*/
+@import "https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@300;400;700&display=swap";
+@-webkit-keyframes text_revel_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes text_revel_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@-webkit-keyframes text_revel {
+  100% {
+    color: whitesmoke;
+  }
+}
+@keyframes text_revel {
+  100% {
+    color: whitesmoke;
+  }
+}
+@-webkit-keyframes text_revel_name {
+  100% {
+    color: maroon;
+  }
+}
+@keyframes text_revel_name {
+  100% {
+    color: maroon;
+  }
+}
+/* End Keyframes */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 30px;
+  color: maroon;
+  background-color: transparent;
+  border: 1.5px solid maroon;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  margin-top: 30px;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+}
+.cta:hover {
+  color: whitesmoke;
+  background-color: maroon;
+}
+
+p {
+  color: whitesmoke;
+  font-size: 1.4rem;
+  margin-top: 5px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+}
+
+.section_title {
+  font-size: 4rem;
+  font-weight: 300;
+  color: black;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+.section_title span {
+  color: maroon;
+}
+
+#hero {
+  background-color: grey;
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.7;
+  z-index: -1;
+}
+#hero h1 {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 4rem;
+  position: relative;
+  color: transparent;
+  -webkit-animation: text_revel 0.5s ease forwards;
+          animation: text_revel 0.5s ease forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+#hero h1:nth-child(1) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+#hero h1:nth-child(1) span {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+#hero h1:nth-child(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+#hero h1:nth-child(2) span {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) {
+  -webkit-animation: text_revel_name 0.5s forwards;
+          animation: text_revel_name 0.5s forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+#hero h1:nth-child(3) span {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+#hero h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: maroon;
+  -webkit-animation: text_revel_box 1s ease;
+          animation: text_revel_box 1s ease;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+#projects .projects {
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+#projects .project_header h1 {
+  margin-bottom: 50px;
+}
+#projects .all_projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#projects .project_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#projects .project_item:hover .project_img img {
+  transform: scale(1.1);
+}
+#projects .project_info {
+  padding: 30px;
+  flex-basis: 50%;
+  background-color: whitesmoke;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(60deg, #29332c 0%, #485563 100%);
+  color: white;
+}
+#projects .project_info h1 {
+  font-size: 4rem;
+  font-weight: 500;
+}
+#projects .project_info h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+#projects .project_info p {
+  color: whitesmoke;
+}
+#projects .project_img {
+  flex-basis: 50%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+#projects .project_img:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(60deg, #29332c 0%, #485563 100%);
+  opacity: 50%;
+}
+#projects .project_img img {
+  transition: 0.3s ease transform;
+}
+
+#about p {
+  color: #485563;
+}
+#about .about {
+  flex-direction: column-reverse;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+#about .col_left {
+  width: 250px;
+  height: 360px;
+}
+#about .col_right {
+  width: 100%;
+}
+#about .col_right h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  margin-bottom: 10px;
+}
+#about .col_right p {
+  margin-bottom: 20px;
+}
+#about .col_right .cta {
+  margin-bottom: 50px;
+}/*# sourceMappingURL=style.css.map */
