@@ -10,6 +10,7 @@ $background_color_2: maroon;
 $background_color_3: grey;
 $background_color_4: black;
 $background_color_5: whitesmoke;
+$fa-font-path: "assets\font_awesome\webfonts";
 
 /* Colors :
 #485563
@@ -17,6 +18,8 @@ maroon
 */
 @import "https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@300;400;700&display=swap";
 
+
+/* Keyframes */
 @keyframes text_revel_box {
 	50% {
 		width: 100%;
@@ -87,6 +90,16 @@ p {
 	font-weight: 300;
 	letter-spacing: .05rem;
 }
+
+.fa-brands {
+  font-size: 30px;
+  padding: 20px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
 .section_title {
 	font-size: 4rem;
 	font-weight: 300;
@@ -99,6 +112,7 @@ p {
 		color: $color_1;
 	}
 }
+
 #hero {
 	background-color: $background_color_3;
 	&::after {
@@ -151,6 +165,7 @@ p {
 		}
 	}
 }
+
 #projects {
 	.projects {
 		flex-direction: column;
@@ -215,7 +230,7 @@ p {
 		height: 300px;
 		overflow: hidden;
 		position: relative;
-		&:after {
+		&::after {
 			content: '';
 			position: absolute;
 			left: 0;
@@ -230,6 +245,7 @@ p {
 		}
 	}
 }
+
 #about {
 	p {
 		color: $color_6;
@@ -241,9 +257,27 @@ p {
 		margin: 0 auto;
 		padding: 100px 20px;
 	}
+
 	.col_left {
 		width: 250px;
 		height: 360px;
+
+        .about_img {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            border: 10px $color_2;
+            &::after {
+                content: ' ';
+                position: absolute;
+                left: -33px;
+                top: 19px;
+                height: 98%;
+                width: 98%;
+                border: 7px solid $color_1;
+                z-index: -1;
+            }
+        }
 	}
 	.col_right {
 		width: 100%;
@@ -258,6 +292,35 @@ p {
 		}
 		.cta {
 			margin-bottom: 50px;
+            padding: 10px 20px;
+            font-size: 2rem;
+            border: 2px solid maroon;
 		}
 	}
+}
+
+#footer {
+    background-color: #29332c;
+    min-height: 200px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    p {
+        color: #485563;
+    }
+    .social_icon {
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+            color: aliceblue;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
 }

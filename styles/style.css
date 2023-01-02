@@ -3,6 +3,7 @@
 maroon
 */
 @import "https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@300;400;700&display=swap";
+/* Keyframes */
 @-webkit-keyframes text_revel_box {
   50% {
     width: 100%;
@@ -99,6 +100,15 @@ p {
   line-height: 2.5rem;
   font-weight: 300;
   letter-spacing: 0.05rem;
+}
+
+.fa-brands {
+  font-size: 30px;
+  padding: 20px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
 }
 
 .section_title {
@@ -238,7 +248,7 @@ p {
   overflow: hidden;
   position: relative;
 }
-#projects .project_img:after {
+#projects .project_img::after {
   content: "";
   position: absolute;
   left: 0;
@@ -266,6 +276,22 @@ p {
   width: 250px;
   height: 360px;
 }
+#about .col_left .about_img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border: 10px whitesmoke;
+}
+#about .col_left .about_img::after {
+  content: " ";
+  position: absolute;
+  left: -33px;
+  top: 19px;
+  height: 98%;
+  width: 98%;
+  border: 7px solid maroon;
+  z-index: -1;
+}
 #about .col_right {
   width: 100%;
 }
@@ -280,4 +306,30 @@ p {
 }
 #about .col_right .cta {
   margin-bottom: 50px;
+  padding: 10px 20px;
+  font-size: 2rem;
+  border: 2px solid maroon;
+}
+
+#footer {
+  background-color: #29332c;
+  min-height: 200px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+}
+#footer p {
+  color: #485563;
+}
+#footer .social_icon .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  color: aliceblue;
+}
+#footer .social_icon .fa:hover {
+  opacity: 0.7;
 }/*# sourceMappingURL=style.css.map */
