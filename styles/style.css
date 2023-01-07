@@ -44,6 +44,26 @@ maroon
     color: maroon;
   }
 }
+@-webkit-keyframes hamburger_pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+@keyframes hamburger_pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
 /* End Keyframes */
 * {
   padding: 0;
@@ -54,6 +74,7 @@ maroon
 html {
   font-size: 15px;
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -133,8 +154,150 @@ p {
   color: #800000;
 }
 
+/* Header */
+#header {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+}
+#header .header {
+  min-height: 8vh;
+  background-color: rgba(31, 30, 30, 0.24);
+  transition: 0.3 ease background-color;
+}
+#header .header .nav-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  padding: 0 10px;
+}
+#header .header .nav-list .active {
+  left: 0%;
+}
+#header .header .nav-list ul {
+  list-style: none;
+  position: absolute;
+  background-color: rgb(31, 30, 30);
+  width: 100vw;
+  height: 100vh;
+  left: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow-x: hidden;
+  transition: 0.7s ease left;
+}
+#header .header .nav-list ul li:hover a {
+  color: maroon;
+}
+#header .header .nav-list ul li:hover a::after {
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}
+#header .header .nav-list ul a {
+  font-size: 2rem;
+  font-weight: 550;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: whitesmoke;
+  text-transform: uppercase;
+  padding: 20px;
+  display: block;
+}
+#header .header .nav-list ul a::after {
+  content: attr(data-after);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: rgba(240, 248, 255, 0.021);
+  font-size: 13rem;
+  letter-spacing: 50px;
+  z-index: -1;
+  transition: 0.3s ease letter-spacing;
+}
+#header .hamburger {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transform: scale(0.8);
+  margin-right: 10px;
+}
+#header .hamburger::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid white;
+  -webkit-animation: hamburger_pulse 0.998s ease infinite;
+          animation: hamburger_pulse 0.998s ease infinite;
+}
+#header .hamburger .bar {
+  height: 2px;
+  width: 30px;
+  position: relative;
+  background-color: white;
+  z-index: -1;
+}
+#header .hamburger .bar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: white;
+  transition: 0.3s ease;
+  transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: white;
+  transition: 0.3s ease;
+  transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+  top: 8px;
+}
+#header .hamburger .bar::before {
+  bottom: 8px;
+}
+#header .hamburger .bar .active .bar::after {
+  top: 0;
+}
+#header .hamburger .bar .active .bar::before {
+  bottom: 0;
+}
+
+/* Hero Section */
 #hero {
   background-color: grey;
+}
+#hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  justify-content: flex-start;
 }
 #hero::after {
   content: "";
@@ -440,15 +603,15 @@ p {
 }
 .footer .social_icon {
   display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
 }
 .footer .social_icon .social-item {
-  height: 50px;
-  width: 50px;
-  margin: 0 5px;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
+  height: 80px;
+  width: 100px;
+  display: flex;
+  align-items: center;
 }
 .footer .social_icon .social-item .fa {
   color: aliceblue;
@@ -493,4 +656,28 @@ p {
     text-align: left;
   }
   /* About Me End */
+}
+/* Media Query for Desktop */
+@media only screen and (min-width: 1200px) {
+  #header .hamburger {
+    display: none;
+  }
+  #header .nav-list ul {
+    position: initial;
+    display: block;
+    height: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: transparent;
+  }
+  #header .nav-list ul li {
+    display: inline-block;
+  }
+  #header .nav-list ul li a {
+    font-size: 1.8rem;
+  }
+  #header .nav-list ul a::after {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
