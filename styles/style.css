@@ -179,6 +179,10 @@ p {
 #header .header .nav-list .active {
   left: 0%;
 }
+#header .header .nav-list .active .bar::before, #header .header .nav-list .active .bar::after {
+  top: 0;
+  bottom: 0;
+}
 #header .header .nav-list ul {
   list-style: none;
   position: absolute;
@@ -256,17 +260,7 @@ p {
   background-color: white;
   z-index: -1;
 }
-#header .hamburger .bar::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  background-color: white;
-  transition: 0.3s ease;
-  transition-property: top, bottom;
-}
-#header .hamburger .bar::after {
+#header .hamburger .bar::before, #header .hamburger .bar::after {
   content: "";
   position: absolute;
   height: 100%;
@@ -281,12 +275,6 @@ p {
 }
 #header .hamburger .bar::before {
   bottom: 8px;
-}
-#header .hamburger .bar .active .bar::after {
-  top: 0;
-}
-#header .hamburger .bar .active .bar::before {
-  bottom: 0;
 }
 
 /* Hero Section */

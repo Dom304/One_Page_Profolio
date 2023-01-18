@@ -166,6 +166,12 @@ p {
 
         .active {
             left: 0%;
+            .bar {
+                &::before, &::after {
+                    top: 0;
+                    bottom: 0;
+                }
+            }
         }
 
         ul {
@@ -222,10 +228,6 @@ p {
                 }
             }
         }
-
-
-
-        
     }
   }
 
@@ -261,17 +263,7 @@ p {
         background-color: $color_5;
         z-index: -1;
 
-        &::before {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            left: 0;
-            background-color: $color_5;
-            transition: .3s ease;
-            transition-property: top, bottom;
-        }
-        &::after {
+        &::before, &::after {
             content: '';
             position: absolute;
             height: 100%;
@@ -288,17 +280,6 @@ p {
 
         &::before {
             bottom: 8px;
-        }
-
-        .active {
-            .bar {
-                &::after {
-                    top: 0;
-                }
-                &::before {
-                    bottom: 0;
-                }
-            }
         }
     }
   }
