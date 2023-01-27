@@ -155,6 +155,7 @@ p {
 
     .nav-bar {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         width: 100%;
         height: 100%;
@@ -182,7 +183,7 @@ p {
             align-items: center;
             z-index: 1;
             overflow-x: hidden;
-            transition: .7s ease left;
+            transition: 0.7s ease left;
 
             li {
                 &:hover {
@@ -217,7 +218,7 @@ p {
                     font-size: 13rem;
                     letter-spacing: 50px;
                     z-index: -1;
-                    transition: .3s ease letter-spacing;
+                    transition: 0.3s ease letter-spacing;
 
                 }
             }
@@ -242,7 +243,7 @@ p {
     z-index: 100;
     cursor: pointer;
     transform: scale(.8);
-    margin-right: 10px;
+    margin-right: 20px;
 
     &::after {
         position: absolute;
@@ -311,7 +312,7 @@ p {
 /* Hero Section */
 #hero {
 	background-color: $background_color_3;
-    .container {
+    .header {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 50px;
@@ -715,12 +716,15 @@ p {
 /* Media Query for Desktop */
 @media only screen and (min-width: 1200px) {
     #header {
+        .container{
         .hamburger {
             display: none;
         }
+
         
         .nav-list {
             ul {
+                color: #000000;
                 position: initial;
                 display: block;
                 height: auto;
@@ -743,4 +747,5 @@ p {
         }
 
     }
+}
 }
