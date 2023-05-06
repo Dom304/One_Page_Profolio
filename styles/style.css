@@ -478,6 +478,7 @@ p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 100px 20px;
 }
 #contact .container h1 {
   padding-bottom: 75px;
@@ -650,22 +651,22 @@ p {
   #header .hamburger {
     display: none;
   }
-  #header .nav-list ul {
-    position: initial;
+  #header .nav-list .ul {
     display: block;
+    position: initial;
     height: auto;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     background-color: transparent;
   }
-  #header .nav-list ul li {
+  #header .nav-list .ul a::after {
+    display: none;
+  }
+  #header .nav-list .ul li {
     display: inline-block;
   }
-  #header .nav-list ul li a {
+  #header .nav-list .ul li a {
     font-size: 1.8rem;
-  }
-  #header .nav-list ul a::after {
-    display: none;
   }
 }/*# sourceMappingURL=style.css.map */
